@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly. `flutter build web --base-href /name/` replaces it.
+  -->
+  <base href="/bluespeak-ai/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueSpeak AI: your AI speaking coach</title>
+  <meta name="description" content="Practise real conversations out loud: job interviews, travel, everyday chats and pitches. BlueSpeak AI corrects every sentence, gives tips and a score. No sign-up or API key needed.">
+  <meta name="theme-color" content="#0a0e2b">
+
+  <!-- Social previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BlueSpeak AI: your AI speaking coach">
+  <meta property="og:description" content="Practise interviews, travel and everyday talk out loud and get instant corrections, tips and a score.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="BlueSpeak AI: your AI speaking coach">
+  <meta name="twitter:description" content="Practise interviews, travel and everyday talk out loud and get instant corrections, tips and a score.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="BlueSpeak AI">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    html, body { margin: 0; height: 100%; background: #050611; }
+    /* Shown while the app downloads, so the first paint is already on-brand. */
+    #boot {
+      position: fixed; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 22px;
+      background: linear-gradient(#050611, #0a0e2b 55%, #0d1240);
+      color: #fff; font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      transition: opacity .4s ease;
+    }
+    #boot img { width: 96px; height: 96px; border-radius: 24px; box-shadow: 0 10px 40px rgba(108,99,255,.45); }
+    #boot .bars { display: flex; gap: 6px; height: 28px; align-items: center; }
+    #boot .bars i {
+      display: block; width: 5px; height: 8px; border-radius: 3px; background: #6c63ff;
+      animation: bs-wave 1s ease-in-out infinite;
+    }
+    #boot .bars i:nth-child(2) { animation-delay: .1s; background: #5e7bff; }
+    #boot .bars i:nth-child(3) { animation-delay: .2s; background: #4a98ff; }
+    #boot .bars i:nth-child(4) { animation-delay: .3s; background: #38b6ff; }
+    #boot .bars i:nth-child(5) { animation-delay: .4s; background: #22d3ee; }
+    @keyframes bs-wave { 0%,100% { height: 8px; } 50% { height: 28px; } }
+  </style>
+</head>
+<body>
+  <div id="boot">
+    <img src="icons/Icon-192.png" alt="">
+    <div class="bars"><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <script>
+    // Remove the boot screen as soon as Flutter has drawn its first frame.
+    window.addEventListener('flutter-first-frame', function () {
+      var boot = document.getElementById('boot');
+      if (!boot) return;
+      boot.style.opacity = '0';
+      setTimeout(function () { boot.remove(); }, 450);
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

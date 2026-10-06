@@ -1,0 +1,48 @@
+name: ai_chat_bot_app
+description: "BlueSpeak AI: an AI speaking coach. Practice real conversations out loud and get instant corrections, tips and scores."
+publish_to: 'none'
+
+version: 1.1.0+2
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
+
+  # Voice: speak to the coach and hear it answer
+  speech_to_text: ^7.0.0
+  flutter_tts: ^4.2.3
+
+  # Coach backend + local storage
+  http: ^1.4.0
+  shared_preferences: ^2.5.3
+
+  # UI
+  cupertino_icons: ^1.0.8
+  google_fonts: ^6.2.1
+  flutter_markdown_plus: ^1.0.3
+  image_picker: ^1.1.2
+  mime: ^2.1.0
+  url_launcher: ^6.3.2
+  flutter_email_sender: ^7.0.0
+
+  # Accounts (optional: the app also works as a guest)
+  firebase_core: ^3.15.2
+  firebase_auth: ^5.6.0
+  google_sign_in: ^6.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/images/

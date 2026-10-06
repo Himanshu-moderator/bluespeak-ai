@@ -1,0 +1,5 @@
+project_id = "pbobinyancnyylqhqevn"
+
+# Open to the public app. The function accepts no secrets from callers and validates every input.
+[functions.bluespeak-coach]
+verify_jwt = false
